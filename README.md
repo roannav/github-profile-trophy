@@ -41,6 +41,23 @@
 > 3. Share your github-profile-trophy URL deployed to Vercel for load balancing
 >    (Send email: saka_ro@yahoo.co.jp or Pull Request)
 
+# Load balancing endpoints
+
+These are endpoints provided by volunteers. Please use these in moderation.
+
+- [https://github-profile-trophy-liard-delta.vercel.app](https://github-profile-trophy-liard-delta.vercel.app/)
+  by [Adwitya](https://github.com/Adwitya)
+- [https://github-profile-trophy-fork-two.vercel.app](https://github-profile-trophy-fork-two.vercel.app)
+  by [hesreallyhim](https://github.com/hesreallyhim)
+- [https://github-profile-trophy-winning.vercel.app](https://github-profile-trophy-winning.vercel.app)
+  by [hongbo-wei](https://github.com/hongbo-wei)
+- [https://github-profile-trophy-kannan.vercel.app](https://github-profile-trophy-kannan.vercel.app)
+  by [kann4n](https://github.com/kann4n)
+- [https://trophy.ryglcloud.net](https://trophy.ryglcloud.net)
+  by [PracticalRyan](https://github.com/PracticalRyan)
+- [https://github-profile-trophy-tawny.vercel.app](https://github-profile-trophy-tawny.vercel.app)
+  by [vijaypurohit322](https://github.com/vijaypurohit322)
+
 # Quick Start
 
 Add the following code to your readme. When pasting the code into your profile's
@@ -553,6 +570,34 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&no-frame=true
   <img width="936" src="https://github.com/user-attachments/assets/54de15a3-d907-4a50-8117-170aae74d1cd">
 </p>
 
+## Generate an svg file localy
+
+Using the render_svg.ts script you can generate your trophys as an svg file
+given your username, (Enviroment Vars: See [env-example](env-example)).
+
+Usage:
+
+```bash
+deno run --allow-net --allow-env --allow-read --allow-write ./render_svg.ts USERNAME OUTPUT_DIR THEME
+```
+
+## Generate an svg inside Github CI (Workflow)
+
+Using the provided github action you can easly generate the trophy inside an
+github workflow. This eliminates the needs of an online service running but you
+have to manualy update rerun the action to update the file.
+
+Usage:
+
+```yaml
+- name: Generate trophy
+  uses: Erik-Donath/github-profile-trophy@feature/generate-svg
+  with:
+    username: your-username
+    output_path: trophy.svg
+    token: ${{ secrets.GITHUB_TOKEN }}
+```
+
 # Contribution Guide
 
 Check [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
@@ -591,6 +636,8 @@ contributions help keep development going and make this work possible.
 
 ## 🎁 One-Time Sponsors
 
+- [@hesreallyhim](https://github.com/hesreallyhim) - $100 (Jan 11, 2026)
+- [@Seo-4d696b75](https://github.com/Seo-4d696b75) — $10 (Jan 4, 2026)
 - [@massif-01](https://github.com/massif-01) — $5 (December 17, 2025)
 - [@tapegram](https://github.com/tapegram) — $20 (December 6, 2025)
 - [@WilliamCorotan](https://github.com/WilliamCorotan) — $5 (November 5, 2025)
