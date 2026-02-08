@@ -37,7 +37,9 @@
 >
 > 1. Financial support: [GitHub Sponsors](https://github.com/sponsors/ryo-ma)
 > 2. Reducing server load through self-hosting (by forking on GitHub and
-> deploying to Vercel)
+>    deploying to Vercel)
+> 3. Share your github-profile-trophy URL deployed to Vercel for load balancing
+>    (Send email: saka_ro@yahoo.co.jp or Pull Request)
 
 # Quick Start
 
@@ -559,3 +561,44 @@ Check [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 
 This product is licensed under the
 [MIT License](https://github.com/ryo-ma/github-profile-trophy/blob/master/LICENSE).
+
+# 🙏 Sponsors
+
+Thank you so much to all the amazing sponsors who support this project! Your
+contributions help keep development going and make this work possible.
+
+## 💖 Monthly Sponsors
+
+- [@Leay15](https://github.com/Leay15) - $10 / month
+- [@hesreallyhim](https://github.com/hesreallyhim) - $10 / month
+- [@pmsosa](https://github.com/pmsosa) — $10 / month
+- [@chenfeng-huang](https://github.com/chenfeng-huang) — $10 / month
+- [@holly-hacker](https://github.com/holly-hacker) — $2 / month
+- [@skillerious](https://github.com/skillerious) — $2 / month (since Aug
+  17, 2024)
+- [@LudovicGardy](https://github.com/LudovicGardy) — $10 / month (since Aug
+  15, 2024)
+- [@alexcastrodev](https://github.com/alexcastrodev) — $10 / month (since Oct
+  13, 2023, previously $50 / month)
+- [@great-work-told-is](https://github.com/great-work-told-is) — $10 / month
+  (since Apr 12, 2023)
+- [@Ilithy](https://github.com/Ilithy) — $5 / month (since Jul 21, 2022)
+- [@weakish](https://github.com/weakish) — $2 / month (since Jan 22, 2022)
+- [@Kazuhito00](https://github.com/Kazuhito00) — $2 / month (since Jan 19, 2022)
+- [@KATO-Hiro](https://github.com/KATO-Hiro) — $2 / month (since Jan 5, 2022)
+- [@batazor](https://github.com/batazor) — $2 / month (since Oct 28, 2021)
+- [@port19x](https://github.com/port19x) — $2 / month (since Jan 27, 2022)
+
+## 🎁 One-Time Sponsors
+
+- [@massif-01](https://github.com/massif-01) — $5 (December 17, 2025)
+- [@tapegram](https://github.com/tapegram) — $20 (December 6, 2025)
+- [@WilliamCorotan](https://github.com/WilliamCorotan) — $5 (November 5, 2025)
+- [@arnabnandy7](https://github.com/arnabnandy7) — $10 (Oct 3, 2025)
+- [@JoqarSabon](https://github.com/JoqarSabon) — $5 (May 24, 2024)
+- [@syaghoubi00](https://github.com/syaghoubi00) — $5 (Jan 28, 2024)
+- [@pylapp](https://github.com/pylapp) — $20 (Jan 15, 2024)
+- [@Dobefu](https://github.com/Dobefu) — $10 (Dec 22, 2024)
+- [@michele-lorenzoni](https://github.com/michele-lorenzoni) — $10 (Nov
+  26, 2024)
+- [@skillerious](https://github.com/skillerious) — $10 (Aug 17, 2024)
