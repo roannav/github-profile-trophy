@@ -45,39 +45,6 @@
 
 These are endpoints provided by volunteers. Please use these in moderation.
 
-- [https://trophygithubreadmelang.cybee.dpdns.org/](https://trophygithubreadmelang.cybee.dpdns.org/)
-  by [Cyberbee-pro](https://github.com/Cyberbee-pro)
-- [https://github-profile-trophy-liard-delta.vercel.app](https://github-profile-trophy-liard-delta.vercel.app/)
-  by [Adwitya](https://github.com/Adwitya)
-- [https://github-profile-trophy-fork-two.vercel.app](https://github-profile-trophy-fork-two.vercel.app)
-  by [hesreallyhim](https://github.com/hesreallyhim)
-- [https://github-profile-trophy-winning.vercel.app](https://github-profile-trophy-winning.vercel.app)
-  by [hongbo-wei](https://github.com/hongbo-wei)
-- [https://github-profile-trophy-kannan.vercel.app](https://github-profile-trophy-kannan.vercel.app)
-  by [kann4n](https://github.com/kann4n)
-- [https://trophy.ryglcloud.net](https://trophy.ryglcloud.net) by
-  [PracticalRyan](https://github.com/PracticalRyan)
-- [https://github-profile-trophy-tawny.vercel.app](https://github-profile-trophy-tawny.vercel.app)
-  by [vijaypurohit322](https://github.com/vijaypurohit322)
-- [https://github-profile-repo.vercel.app](https://github-profile-repo.vercel.app/)
-  by [HackyCoder0951](https://github.com/hackycoder0951)
-- [https://gh-trophy.cdnsoft.net](https://gh-trophy.cdnsoft.net) by
-  [cromatikap](https://github.com/cromatikap)
-- [https://trophygh.kolioaris.xyz](https://trophygh.kolioaris.xyz) by
-  [kolioaris](https://github.com/kolioaris)
-- [https://github-profile-trophy-orcin-eta.vercel.app](https://github-profile-trophy-orcin-eta.vercel.app/)
-  by [manupawick](https://github.com/manupawickramasinghe)
-- [https://github-profile-trophy-reiyua-mirror.vercel.app](https://github-profile-trophy-reiyua-mirror.vercel.app)
-  by [reiyua](https://github.com/reiyua)
-- [https://github-profile-trophy-sigma-one.vercel.app](https://github-profile-trophy-sigma-one.vercel.app/)
-  by [namankoolwal](https://github.com/namankoolwal)
-- [https://trophy.benkou.dev/](https://trophy.benkou.dev/)
-  by [Ben](https://github.com/0x5b62656e5d)
-- [https://github-trophies.devomb.com/](https://github-trophies.devomb.com/)
-  by [DevomB](https://github.com/DevomB/Github-Trophies)
-- [https://github-profile-trophy-unserori.vercel.app/](https://github-profile-trophy-unserori.vercel.app/)
-  by [unSerori](https://github.com/unSerori)
-
 # Quick Start
 
 Add the following code to your readme. When pasting the code into your profile's
