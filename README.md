@@ -45,6 +45,8 @@
 
 These are endpoints provided by volunteers. Please use these in moderation.
 
+- [https://trophygithubreadmelang.cybee.dpdns.org/](https://trophygithubreadmelang.cybee.dpdns.org/)
+  by [Cyberbee-pro](https://github.com/Cyberbee-pro)
 - [https://github-profile-trophy-liard-delta.vercel.app](https://github-profile-trophy-liard-delta.vercel.app/)
   by [Adwitya](https://github.com/Adwitya)
 - [https://github-profile-trophy-fork-two.vercel.app](https://github-profile-trophy-fork-two.vercel.app)
@@ -53,8 +55,28 @@ These are endpoints provided by volunteers. Please use these in moderation.
   by [hongbo-wei](https://github.com/hongbo-wei)
 - [https://github-profile-trophy-kannan.vercel.app](https://github-profile-trophy-kannan.vercel.app)
   by [kann4n](https://github.com/kann4n)
+- [https://trophy.ryglcloud.net](https://trophy.ryglcloud.net) by
+  [PracticalRyan](https://github.com/PracticalRyan)
 - [https://github-profile-trophy-tawny.vercel.app](https://github-profile-trophy-tawny.vercel.app)
   by [vijaypurohit322](https://github.com/vijaypurohit322)
+- [https://github-profile-repo.vercel.app](https://github-profile-repo.vercel.app/))
+  by [HackyCoder0951](https://github.com/hackycoder0951)
+- [https://gh-trophy.cdnsoft.net](https://gh-trophy.cdnsoft.net) by
+  [cromatikap](https://github.com/cromatikap)
+- [https://trophygh.kolioaris.xyz](https://trophygh.kolioaris.xyz) by
+  [kolioaris](https://github.com/kolioaris)
+- [https://github-profile-trophy-orcin-eta.vercel.app](https://github-profile-trophy-orcin-eta.vercel.app/)
+  by [manupawick](https://github.com/manupawickramasinghe)
+- [https://github-profile-trophy-reiyua-mirror.vercel.app](https://github-profile-trophy-reiyua-mirror.vercel.app)
+  by [reiyua](https://github.com/reiyua)
+- [https://github-profile-trophy-sigma-one.vercel.app](https://github-profile-trophy-sigma-one.vercel.app/))
+  by [namankoolwal](https://github.com/namankoolwal)
+- [https://trophy.benkou.dev/](https://trophy.benkou.dev/)
+  by [Ben](https://github.com/0x5b62656e5d)
+- [https://github-trophies.devomb.com/](https://github-trophies.devomb.com/)
+  by [DevomB](https://github.com/DevomB/Github-Trophies)
+- [https://github-profile-trophy-unserori.vercel.app/](https://github-profile-trophy-unserori.vercel.app/)
+  by [unSerori](https://github.com/unSerori)
 
 # Quick Start
 
@@ -634,6 +656,7 @@ contributions help keep development going and make this work possible.
 
 ## 🎁 One-Time Sponsors
 
+- [@pronoym99](https://github.com/pronoym99) - $20 (Feb 8, 2026)
 - [@hesreallyhim](https://github.com/hesreallyhim) - $100 (Jan 11, 2026)
 - [@Seo-4d696b75](https://github.com/Seo-4d696b75) — $10 (Jan 4, 2026)
 - [@massif-01](https://github.com/massif-01) — $5 (December 17, 2025)
