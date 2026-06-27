@@ -1,5 +1,3 @@
-import axios, { AxiosResponse } from "npm:axios";
-
 type FetchVariables = {
   login: string;
 };
@@ -20,6 +18,12 @@ type GitHubApiErrorResponse = {
 
 type CommitSearchApiResponse = CommitSearchResponse | GitHubApiErrorResponse;
 
+type ApiResponse = {
+  data: CommitSearchApiResponse;
+  status: number;
+  ok: boolean;
+};
+
 const TOKENS: string[] = [
   Deno.env.get("GITHUB_TOKEN1"),
   Deno.env.get("GITHUB_TOKEN2"),
@@ -30,25 +34,33 @@ const TOKENS: string[] = [
  *
  * @see https://developer.github.com/v3/search/#search-commits
  */
-const fetchTotalCommits = (
+const fetchTotalCommits = async (
   variables: FetchVariables,
   token: string,
-): Promise<AxiosResponse<CommitSearchApiResponse>> => {
-  return axios({
-    method: "get",
-    url: `https://api.github.com/search/commits?q=author:${variables.login}`,
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/vnd.github.cloak-preview",
-      Authorization: `token ${token}`,
+): Promise<ApiResponse> => {
+  const response = await fetch(
+    `https://api.github.com/search/commits?q=author:${variables.login}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/vnd.github.cloak-preview",
+        Authorization: `token ${token}`,
+      },
     },
-  });
+  );
+
+  const data = await response.json() as CommitSearchApiResponse;
+
+  return {
+    data,
+    status: response.status,
+    ok: response.ok,
+  };
 };
 
-const isRateLimitedResponse = (
-  response: AxiosResponse<CommitSearchApiResponse>,
-): boolean => {
-  const data = response?.data as GitHubApiErrorResponse;
+const isRateLimitedResponse = (response: ApiResponse): boolean => {
+  const data = response.data as GitHubApiErrorResponse;
   const errors = data?.errors;
   const errorType = errors?.[0]?.type;
   const errorMsg = errors?.[0]?.message || data?.message || "";
@@ -60,9 +72,9 @@ const fetchWithTokens = async (
   fetcher: (
     variables: FetchVariables,
     token: string,
-  ) => Promise<AxiosResponse<CommitSearchApiResponse>>,
+  ) => Promise<ApiResponse>,
   variables: FetchVariables,
-): Promise<AxiosResponse<CommitSearchApiResponse>> => {
+): Promise<ApiResponse> => {
   if (TOKENS.length === 0) {
     throw new Error("No GitHub API tokens found");
   }
@@ -70,41 +82,34 @@ const fetchWithTokens = async (
   let lastError: unknown;
 
   for (let i = 0; i < TOKENS.length; i++) {
-    try {
-      const response = await fetcher(variables, TOKENS[i]);
+    const response = await fetcher(variables, TOKENS[i]);
 
-      if (isRateLimitedResponse(response)) {
-        console.log(`GITHUB_TOKEN${i + 1} rate limited`);
-        if (i < TOKENS.length - 1) {
-          continue;
-        }
-        throw new Error("Downtime due to GitHub API rate limiting");
+    if (isRateLimitedResponse(response)) {
+      console.log(`GITHUB_TOKEN${i + 1} rate limited`);
+      if (i < TOKENS.length - 1) {
+        continue;
       }
+      throw new Error("Downtime due to GitHub API rate limiting");
+    }
 
-      return response;
-    } catch (err: unknown) {
-      if (!axios.isAxiosError(err) || !err.response) {
-        throw err;
-      }
-
-      const message = (err.response.data as GitHubApiErrorResponse)?.message ||
-        "";
+    if (!response.ok) {
+      const message = (response.data as GitHubApiErrorResponse)?.message || "";
       const shouldRetry = message === "Bad credentials" ||
         message === "Sorry. Your account was suspended." ||
         /rate limit/i.test(message);
 
       if (shouldRetry && i < TOKENS.length - 1) {
         console.log(`GITHUB_TOKEN${i + 1} failed`);
-        lastError = err;
+        lastError = new Error(message);
         continue;
       }
 
       if (/rate limit/i.test(message)) {
         throw new Error("Downtime due to GitHub API rate limiting");
       }
-
-      return err.response as AxiosResponse<CommitSearchApiResponse>;
     }
+
+    return response;
   }
 
   throw lastError instanceof Error
@@ -124,7 +129,7 @@ const totalCommitsFetcher = async (username: string): Promise<number> => {
     throw new Error("Invalid username provided.");
   }
 
-  let res: AxiosResponse<CommitSearchApiResponse>;
+  let res: ApiResponse;
   try {
     res = await fetchWithTokens(fetchTotalCommits, { login: username });
   } catch (err) {
