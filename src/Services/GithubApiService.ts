@@ -75,7 +75,9 @@ export class GithubApiService extends GithubRepository {
       try {
         totalAllTimeCommits = await totalCommitsFetcher(username);
       } catch {
-        Logger.error(`Error fetching total all time commits for username: ${username}`);
+        Logger.error(
+          `Error fetching total all time commits for username: ${username}`,
+        );
       }
       return UserInfo.fromCombined(result, totalAllTimeCommits);
     } catch {

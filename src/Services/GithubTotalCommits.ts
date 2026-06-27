@@ -89,8 +89,7 @@ const fetchWithTokens = async (
 
       const message = (err.response.data as GitHubApiErrorResponse)?.message ||
         "";
-      const shouldRetry =
-        message === "Bad credentials" ||
+      const shouldRetry = message === "Bad credentials" ||
         message === "Sorry. Your account was suspended." ||
         /rate limit/i.test(message);
 
@@ -135,7 +134,7 @@ const totalCommitsFetcher = async (username: string): Promise<number> => {
 
   const totalCount = (res.data as CommitSearchResponse).total_count;
   if (totalCount == null || isNaN(totalCount)) {
-    throw new Error( "Could not fetch total commits.");
+    throw new Error("Could not fetch total commits.");
   }
   return totalCount;
 };
