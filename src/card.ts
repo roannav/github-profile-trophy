@@ -37,6 +37,7 @@ export class Card {
       }
       trophyList.filterByExclusionTitles(this.titles);
     }
+    trophyList.filterByExclusionTitles(["-Reviews"]);
 
     if (this.ranks.length != 0) {
       trophyList.filterByRanks(this.ranks);

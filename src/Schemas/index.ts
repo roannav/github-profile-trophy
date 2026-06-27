@@ -6,6 +6,7 @@ export const queryUserActivity = `
           totalCommitContributions
           restrictedContributionsCount
           totalPullRequestReviewContributions
+          totalRepositoriesWithContributedPullRequestReviews
         }
         organizations(first: 1) {
           totalCount
@@ -69,6 +70,7 @@ export const queryUserAll = `
         totalCommitContributions
         restrictedContributionsCount
         totalPullRequestReviewContributions
+        totalRepositoriesWithContributedPullRequestReviews
       }
       organizations(first: 1) {
         totalCount

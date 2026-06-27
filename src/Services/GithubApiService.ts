@@ -19,6 +19,7 @@ import { CONSTANTS } from "../utils.ts";
 import { EServiceKindError, ServiceError } from "../Types/index.ts";
 import { Logger } from "../Helpers/Logger.ts";
 import { requestGithubData } from "./request.ts";
+import totalCommitsFetcher from "./GithubTotalCommits.ts";
 
 // Need to be here - Exporting from another file makes array of null
 export const TOKENS = [
@@ -70,7 +71,13 @@ export class GithubApiService extends GithubRepository {
       if (result instanceof ServiceError) {
         return result;
       }
-      return UserInfo.fromCombined(result);
+      let totalAllTimeCommits = 0;
+      try {
+        totalAllTimeCommits = await totalCommitsFetcher(username);
+      } catch {
+        Logger.error(`Error fetching total all time commits for username: ${username}`);
+      }
+      return UserInfo.fromCombined(result, totalAllTimeCommits);
     } catch {
       Logger.error(`Error fetching user info for username: ${username}`);
       return new ServiceError("Not found", EServiceKindError.NOT_FOUND);

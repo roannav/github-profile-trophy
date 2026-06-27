@@ -33,6 +33,7 @@ export type GitHubUserActivity = {
     totalCommitContributions: number;
     restrictedContributionsCount: number;
     totalPullRequestReviewContributions: number;
+    totalRepositoriesWithContributedPullRequestReviews: number;
   };
   organizations: {
     totalCount: number;
@@ -49,6 +50,7 @@ export type GitHubUserAll =
   & GitHubUserRepository;
 export class UserInfo {
   public readonly totalCommits: number;
+  public readonly totalAllTimeCommits: number;
   public readonly totalFollowers: number;
   public readonly totalIssues: number;
   public readonly totalOrganizations: number;
@@ -63,8 +65,11 @@ export class UserInfo {
   public readonly joined2020: number;
   public readonly ogAccount: number;
 
-  static fromCombined(data: GitHubUserAll): UserInfo {
-    return new UserInfo(data, data, data, data);
+  static fromCombined(
+    data: GitHubUserAll,
+    totalAllTimeCommits: number,
+  ): UserInfo {
+    return new UserInfo(data, data, data, data, totalAllTimeCommits);
   }
 
   constructor(
@@ -72,10 +77,11 @@ export class UserInfo {
     userIssue: GitHubUserIssue,
     userPullRequest: GitHubUserPullRequest,
     userRepository: GitHubUserRepository,
+    totalAllTimeCommits: number,
   ) {
-    const totalCommits =
-      userActivity.contributionsCollection.restrictedContributionsCount +
-      userActivity.contributionsCollection.totalCommitContributions;
+    const totalCommits = totalAllTimeCommits ||
+      (userActivity.contributionsCollection.restrictedContributionsCount +
+       userActivity.contributionsCollection.totalCommitContributions);
     const totalStargazers = userRepository.repositories.nodes.reduce(
       (prev: number, node: Repository) => {
         return prev + node.stargazers.totalCount;
@@ -93,6 +99,7 @@ export class UserInfo {
         });
       }
     });
+    //console.log("languages", languages);
 
     // Find the earliest repository creation date
     let earliestRepoDate = userActivity.createdAt; // start with the oldest possible
@@ -119,6 +126,7 @@ export class UserInfo {
     const ogAccount = new Date(earliestRepoDate).getFullYear() <= 2008 ? 1 : 0;
 
     this.totalCommits = totalCommits;
+    this.totalAllTimeCommits = totalAllTimeCommits;
     this.totalFollowers = userActivity.followers.totalCount;
     this.totalIssues = userIssue.openIssues.totalCount +
       userIssue.closedIssues.totalCount;
